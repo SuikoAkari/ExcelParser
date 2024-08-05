@@ -1,10 +1,12 @@
 ﻿using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ExcelParser
 {
@@ -74,7 +76,7 @@ namespace ExcelParser
                 {
                     
                   
-                    string val = ParseType(keyValuePair.Value, reader);
+                    string val = ParseType(keyValuePair.Value.Trim(), reader);
                     Console.WriteLine("Adding " + keyValuePair.Key + ": " + val);
                     strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
@@ -109,6 +111,11 @@ namespace ExcelParser
                uint val = (uint)reader.ReadVarUInt();
                 return val.ToString();
             }
+            else if (Value == "byte")
+            {
+                byte val = reader.ReadU8();
+                return val.ToString();
+            }
             else if (Value == "int")
             {
                 int val = (int)reader.ReadVarInt();
@@ -117,7 +124,7 @@ namespace ExcelParser
             else if (Value == "bool")
             {
                 bool val = reader.ReadBool();
-                return val.ToString();
+                return val.ToString().ToLower();
             }
             else if (Value == "string")
             {
@@ -152,26 +159,35 @@ namespace ExcelParser
         }
 
         public void Parse(string input) {
-           
+            string fileName = Path.GetFileName(input);
+            Console.WriteLine("Parsing " + fileName);
+            try
+            {
                 DeReader deReader = new DeReader(input);
                 var fileStream = new FileStream(input, FileMode.Open, FileAccess.Read);
-                 string ExcelName = "MaterialExcelConfig";
-               
+
+                string ExcelName = fileName.Replace("Data", "");
+
                 int arraySize = (int)deReader.ReadVarInt();
-              
-                Console.WriteLine("arraySize " + arraySize);
+
+                // Console.WriteLine("arraySize " + arraySize);
                 List<string> strings = new List<string>();
                 for (int i = 0; i < arraySize; i++)
                 {
                     strings.Add(ParseClassInt(deReader, new ExcelConfig("Configs/" + ExcelName + ".txt")));
                 }
-
-                File.WriteAllText("test.json","["+ string.Join(",", strings.ToArray())+"]");
-            
-            while (true)
-            {
+                Console.WriteLine("Parsing of " + fileName + " completed");
+                dynamic parsedJson = JsonConvert.DeserializeObject("[" + string.Join(",", strings.ToArray()) + "]");
+                string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+                File.WriteAllText($"Output/{fileName}.json", allText);
 
             }
+            catch(Exception e)
+            {
+                Console.WriteLine("Parsing of " + fileName + " not completed: Error occured");
+            }
+           
+
         } 
     }
 }
