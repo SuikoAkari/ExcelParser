@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using Newtonsoft.Json;
+using Pastel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,12 +78,12 @@ namespace ExcelParser
                     
                   
                     string val = ParseType(keyValuePair.Value.Trim(), reader);
-                    Console.WriteLine("Adding " + keyValuePair.Key + ": " + val);
+                   // Console.WriteLine("Adding " + keyValuePair.Key + ": " + val);
                     strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
                 else
                 {
-                    Console.WriteLine("Skip "+keyValuePair.Key);
+                   // Console.WriteLine("Skip "+keyValuePair.Key);
                 }
 
                
@@ -160,7 +161,7 @@ namespace ExcelParser
 
         public void Parse(string input) {
             string fileName = Path.GetFileName(input);
-            Console.WriteLine("Parsing " + fileName);
+            Console.WriteLine("Parsing " + fileName.Pastel("#4287f5"));
             try
             {
                 DeReader deReader = new DeReader(input);
@@ -174,9 +175,11 @@ namespace ExcelParser
                 List<string> strings = new List<string>();
                 for (int i = 0; i < arraySize; i++)
                 {
+                    Console.Write("\r{0}%".Pastel("#4287f5")+" completed   ", (float)i/arraySize*100);
+                    
                     strings.Add(ParseClassInt(deReader, new ExcelConfig("Configs/" + ExcelName + ".txt")));
                 }
-                Console.WriteLine("Parsing of " + fileName + " completed");
+                Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"SUCCESS".Pastel("#51f542"));
                 dynamic parsedJson = JsonConvert.DeserializeObject("[" + string.Join(",", strings.ToArray()) + "]");
                 string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
                 File.WriteAllText($"Output/{fileName}.json", allText);
@@ -184,7 +187,7 @@ namespace ExcelParser
             }
             catch(Exception e)
             {
-                Console.WriteLine("Parsing of " + fileName + " not completed: Error occured");
+                Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"ERROR OCCURRED".Pastel("#f54242"));
             }
            
 
