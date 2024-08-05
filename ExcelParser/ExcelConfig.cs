@@ -25,13 +25,18 @@ namespace ExcelParser
                 exist = true;
                 Properties.Clear();
                 Enums.Clear();
+                int i = 0;
                 foreach (string line in lines)
                 {
+                    if (line.Contains("//")){
+                        continue;
+                    }
                     string[] keyValue = line.Split(':');
                     string val = keyValue[1].Trim();
-                    if (keyValue[0].Trim() == "type")
+                    if (keyValue[0].Trim() == "type" && i==0)
                     {
                         type = val;
+                        i++;
                         continue;
                     }
                     else
@@ -46,6 +51,7 @@ namespace ExcelParser
                     {
                         Enums.Add(keyValue[0].Trim(), int.Parse(val));
                     }
+                    i++;
                 }
             }
             catch (Exception e)

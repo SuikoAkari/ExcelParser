@@ -79,11 +79,12 @@ namespace ExcelParser
                   
                     string val = ParseType(keyValuePair.Value.Trim(), reader);
                    // Console.WriteLine("Adding " + keyValuePair.Key + ": " + val);
+                   if(val != null)
                     strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
                 else
                 {
-                   // Console.WriteLine("Skip "+keyValuePair.Key);
+                  //  Console.WriteLine("Skip "+keyValuePair.Key);
                 }
 
                
@@ -109,8 +110,18 @@ namespace ExcelParser
             }
             else if (Value == "uint")
             {
-               uint val = (uint)reader.ReadVarUInt();
-                return val.ToString();
+               ulong val = reader.ReadVarUInt();
+                return ""+val;
+            }
+            else if (Value == "float")
+            {
+                float val = reader.ReadF32();
+                return $"{val}".Replace(",",".");
+            }
+            else if (Value == "double")
+            {
+                double val = reader.ReadF64();
+                return val.ToString().Replace(",", ".");
             }
             else if (Value == "byte")
             {
@@ -179,15 +190,19 @@ namespace ExcelParser
                     
                     strings.Add(ParseClassInt(deReader, new ExcelConfig("Configs/" + ExcelName + ".txt")));
                 }
-                Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"SUCCESS".Pastel("#51f542"));
+                Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"SUCCESS".Pastel("#51f542")+" OUTPUT: "+ $"Output/{fileName}.json".Pastel("#ffdf78"));
+               // File.WriteAllText($"Output/{fileName}.json.noIdent", "[" + string.Join(",", strings.ToArray()) + "]");
                 dynamic parsedJson = JsonConvert.DeserializeObject("[" + string.Join(",", strings.ToArray()) + "]");
                 string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
                 File.WriteAllText($"Output/{fileName}.json", allText);
-
+              
+                
             }
             catch(Exception e)
             {
+                
                 Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"ERROR OCCURRED".Pastel("#f54242"));
+                Console.WriteLine("Error: "+e.Message.Pastel("#f54242"));
             }
            
 

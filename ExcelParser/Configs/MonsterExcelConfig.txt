@@ -1,0 +1,67 @@
+type: Class
+_HACK__0: __HACK_
+monsterName: string
+type: MonsterType
+_HACK__3: __HACK_
+securityLevel:uint
+scriptDataPathHash: uint
+serverScript: string
+combatConfigHash: uint
+affix: uint[]
+ai: string
+isAIHashCheck: bool
+equips: uint[]
+canSwim: bool
+hpDrops: MonsterDrop[]
+killDropId: uint
+isSceneReward: bool
+visionLevel: VisionLevelType
+isInvisibleReset: bool
+excludeWeathers: string
+featureTagGroupID: uint
+mpPropID: uint
+skin: string
+describeId: uint
+safetyCheck: bool
+combatBGMLevel: int
+entityBudgetLevel: int
+radarHintID: uint
+OJLMBNOEHNB:bool
+CJJBMDLNCCN: uint
+UNDEFINED3: uint
+//CreatureExcel
+hpBase: float
+attackBase: float
+defenseBase: float
+critical:float
+antiCritical:float
+criticalHurt:float
+fireSubHurt: float
+grassSubHurt: float
+waterSubHurt: float
+elecSubHurt: float
+windSubHurt: float
+iceSubHurt: float
+rockSubHurt: float
+fireAddHurt: float
+grassAddHurt: float
+waterAddHurt: float
+elecAddHurt: float
+windAddHurt: float
+iceAddHurt: float
+rockAddHurt: float
+propGrowCurves: FightPropGrowConfig[]
+elementMastery: float
+physicalSubHurt: float
+physicalAddHurt:float
+prefabPathRagdollHash: uint
+deformationMeshPathHash: uint
+//Entity Excel
+id: uint
+nameTextMapHash: uint
+prefabPathHash: uint
+prefabPathRemoteHash: uint
+controllerPathHash: uint
+controllerPathRemoteHash: uint
+campID: uint
+lodPatternName: string

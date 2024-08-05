@@ -98,7 +98,7 @@ namespace ExcelParser
 
         public float ReadF32()
         {
-            var value = reader.ReadSingle();
+            float value = reader.ReadSingle();
             position += 4;
             return value;
         }
