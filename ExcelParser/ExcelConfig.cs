@@ -13,25 +13,9 @@ namespace ExcelParser
         public Dictionary<string, int> Enums = new Dictionary<string, int>();
         public Dictionary<string, string> Properties = new Dictionary<string, string>()
         {
-            {"interactionTitleTextMapHash","uint"},
-            {"materialType","MaterialType" },
-            {"cdTime","uint" },
-            {"cdGroup","uint" },
-            {"stackLimit","uint" },
-            {"maxUseCount","uint" },
-            {"useOnGain","bool" },
-            {"noFirstGetHint","bool" },
-            {"playGainEffect","bool" },
-            {"useTarget","bool" },
-            {"itemUse","ItemUseConfig[]" },
-            {"rankLevel","uint" },
-            {"foodQuality","FoodQualityType" },
-            {"effectDescTextMapHash","uint" },
-            {"specialDescTextMapHash","uint" },
-            {"typeDescTextMapHash","uint" },
-            {"effectIcon","string" },
+
         };
-        private string v;
+       
 
         public ExcelConfig(string input)
         {

@@ -152,7 +152,7 @@ namespace ExcelParser
 
         private string ParseEnum(DeReader reader, ExcelConfig config)
         {
-           uint val =(uint) reader.ReadVarUInt() ;
+           uint val =(uint) reader.ReadVarInt() ;
            string sVal=config.GetEnumValue(val);
 
            return $"\"{sVal}\"";
