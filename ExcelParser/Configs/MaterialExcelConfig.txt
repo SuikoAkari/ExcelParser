@@ -1,0 +1,43 @@
+﻿type: Class
+interactionTitleTextMapHash:uint
+materialType:MaterialType
+cdTime:uint
+cdGroup:uint
+stackLimit:uint
+maxUseCount:uint
+useOnGain:bool
+noFirstGetHint:bool
+playGainEffect:bool
+useTarget:bool
+itemUse:ItemUseConfig[]
+rankLevel:uint
+foodQuality:FoodQualityType
+effectDescTextMapHash:uint
+specialDescTextMapHash:uint
+typeDescTextMapHash:uint
+effectIcon:string
+effectGadgetID: uint
+effectName: string
+picPath: string[]
+isSplitDrop: bool
+closeBagAfterUsed: bool
+satiationParams: uint[]
+destroyRule: MaterialDestroyType
+destroyReturnMaterial: uint[]
+destroyReturnMaterialCount: uint[]
+setID: uint
+isHidden: bool
+isForceGetHint: bool
+HGEIEBPMIBD:byte
+UNDEFINEDINT:uint
+id: uint
+nameTextMapHash: uint
+descTextMapHash: uint
+icon: string
+itemType: ItemType
+weight: uint
+rank: uint
+gadgetId: uint
+dropable: bool
+useLevel: int
+globalItemLimit: int
