@@ -1,0 +1,27 @@
+﻿type: Class
+    equipType: EquipType
+    showPic: string
+    rankLevel: uint
+    mainPropDepotId: uint
+    appendPropDepotId: uint
+    appendPropNum: uint
+    setId: uint
+    addPropLevels: uint[]
+    baseConvExp: uint
+    maxLevel: uint
+    storyId: uint
+    destroyRule: MaterialDestroyType
+    destroyReturnMaterial: uint[]
+    destroyReturnMaterialCount: uint[]
+    initialLockState: uint
+    id: uint
+    nameTextMapHash: uint
+    descTextMapHash: uint
+    icon: string
+    itemType: ItemType
+    weight: uint
+    rank: uint
+    gadgetId: uint
+    dropable: bool
+    useLevel: uint
+    globalItemLimit: uint

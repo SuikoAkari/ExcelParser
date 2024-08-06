@@ -1,0 +1,4 @@
+type: Class
+    cond_type: OpenStateCondType
+    param: uint
+    param2: uint

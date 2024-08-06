@@ -1,0 +1,6 @@
+type: Class
+id: uint
+defaultState: bool
+allowClientOpen: bool
+cond: OpenStateCond[]
+system_open_ui_id: uint

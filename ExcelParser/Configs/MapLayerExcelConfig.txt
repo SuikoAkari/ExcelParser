@@ -1,0 +1,5 @@
+﻿type: Class
+id: uint
+aaa: uint
+sus: uint
+level: float
