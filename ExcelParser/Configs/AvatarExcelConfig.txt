@@ -1,0 +1,77 @@
+type: Class
+useType: AvatarUseType
+bodyType: BodyType
+scriptDataPathHash: uint
+iconName: string
+sideIconName: string
+qualityType: QualityType
+chargeEfficiency: float
+healAdd: float
+healedAdd: float
+combatConfigHash: uint
+isRangeAttack: bool
+initialWeapon: uint
+weaponType: WeaponType
+manekinPathHash: uint
+imageName: string
+gachaCardNameHash: uint
+gachaImageNameHash: uint
+
+coopPicNameHash: uint
+cutsceneShow: string
+skillDepotId: uint
+staminaRecoverSpeed: float
+candSkillDepotIds: uint[]
+manekinJsonConfigHash: uint
+manekinMotionConfig: uint
+descTextMapHash: uint
+avatarIdentityType: AvatarIdentityType
+avatarPromoteId: uint
+avatarPromoteRewardLevelList: uint[]
+avatarPromoteRewardIdList: uint[]
+featureTagGroupId: uint
+infoDescTextMapHash: uint
+animatorConfigPathHash: uint
+specialDeformationMeshPathHash: uint
+unk1: uint
+unk2: uint
+unk3: uint
+
+
+
+//CreatureExcel
+hpBase: float
+attackBase: float
+defenseBase: float
+critical:float
+antiCritical:float
+criticalHurt:float
+fireSubHurt: float
+grassSubHurt: float
+waterSubHurt: float
+elecSubHurt: float
+windSubHurt: float
+iceSubHurt: float
+rockSubHurt: float
+fireAddHurt: float
+grassAddHurt: float
+waterAddHurt: float
+elecAddHurt: float
+windAddHurt: float
+iceAddHurt: float
+rockAddHurt: float
+propGrowCurves: FightPropGrowConfig[]
+elementMastery: float
+physicalSubHurt: float
+physicalAddHurt: float
+prefabPathRagdollHash: uint
+deformationMeshPathHash: uint
+//Entity Excel
+id: uint
+nameTextMapHash: uint
+prefabPathHash: uint
+prefabPathRemoteHash: uint
+controllerPathHash: uint
+controllerPathRemoteHash: uint
+campID: uint
+lodPatternName: string

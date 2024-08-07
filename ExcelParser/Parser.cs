@@ -68,23 +68,23 @@ namespace ExcelParser
         {
             List<string> strings = new List<string>();
 
-
             ExcelBitMask mask = new ExcelBitMask(reader);
+
             int j = 0;
             foreach (KeyValuePair<string, string> keyValuePair in excel.Properties)
             {
                 if (mask.TestBit(j))
                 {
-                    
-                  
+
+                   // Console.WriteLine("Adding " + keyValuePair.Key);
                     string val = ParseType(keyValuePair.Value.Trim(), reader);
-                   // Console.WriteLine("Adding " + keyValuePair.Key + ": " + val);
+                   
                    if(val != null)
                     strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
                 else
                 {
-                  //  Console.WriteLine("Skip "+keyValuePair.Key);
+                  // Console.WriteLine("Skip "+keyValuePair.Key);
                 }
 
                
@@ -176,7 +176,7 @@ namespace ExcelParser
             try
             {
                 DeReader deReader = new DeReader(input);
-                var fileStream = new FileStream(input, FileMode.Open, FileAccess.Read);
+           
 
                 string ExcelName = fileName.Replace("Data", "");
 
