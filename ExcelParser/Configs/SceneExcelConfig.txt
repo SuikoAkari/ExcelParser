@@ -1,0 +1,28 @@
+﻿type: Class
+//Fixed required
+    id: uint
+    type: SceneType
+    subtype: SceneSubType
+    ignoreNavMesh: IgnoreNavmesh
+    useToTheMoon: bool
+    navmeshMode: NavmeshModeType
+    scriptData: string
+    overrideDefaultProfile: string
+    levelEntityConfig: string
+    entityAppearSorted: uint
+    specifiedAvatarList: uint[]
+    maxSpecifiedAvatarNum: uint
+    sceneFixTime: float
+    comment: string
+    overrideVisionLevelType: uint
+    safePoint: uint
+    mpType: SceneMpType
+    isAllowMapMarkPoint: bool
+    boundaryPointVec: uint[]
+    isDeleteMapMarkPoint: bool
+    dungeonEntryPoint: uint[]
+    imageSceneId: uint
+    aaa: uint
+    eee: uint
+    worldSceneId: uint
+    ddd: uint

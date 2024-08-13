@@ -76,15 +76,15 @@ namespace ExcelParser
                 if (mask.TestBit(j))
                 {
 
-                   // Console.WriteLine("Adding " + keyValuePair.Key);
+                  
                     string val = ParseType(keyValuePair.Value.Trim(), reader);
-                   
-                   if(val != null)
+                    Console.WriteLine("Adding " + keyValuePair.Key+": "+val);
+                    if (val != null)
                     strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
                 else
                 {
-                  // Console.WriteLine("Skip "+keyValuePair.Key);
+                   Console.WriteLine("Skip "+keyValuePair.Key);
                 }
 
                

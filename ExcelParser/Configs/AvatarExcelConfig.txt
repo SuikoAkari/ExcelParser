@@ -16,7 +16,6 @@ manekinPathHash: uint
 imageName: string
 gachaCardNameHash: uint
 gachaImageNameHash: uint
-
 coopPicNameHash: uint
 cutsceneShow: string
 skillDepotId: uint
@@ -36,9 +35,6 @@ specialDeformationMeshPathHash: uint
 unk1: uint
 unk2: uint
 unk3: uint
-
-
-
 //CreatureExcel
 hpBase: float
 attackBase: float

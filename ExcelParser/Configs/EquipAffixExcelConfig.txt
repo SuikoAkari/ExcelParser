@@ -1,0 +1,9 @@
+type: Class
+    affixId: uint
+    id: uint
+    level: uint
+    nameTextMapHash: uint
+    descTextMapHash: uint
+    openConfig: string
+    addProps: Prop[]
+    paramList: float[]

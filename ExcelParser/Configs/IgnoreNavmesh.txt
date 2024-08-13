@@ -1,0 +1,3 @@
+﻿type: Enum
+  Server: 2
+  NotUse: 1
