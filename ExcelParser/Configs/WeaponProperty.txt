@@ -1,0 +1,4 @@
+  type: Class
+  propType: FightPropType
+    initValue: float
+    type: GrowCurveType

@@ -1,0 +1,34 @@
+﻿type: Class
+weaponType: WeaponType
+rankLevel: uint
+t:uint
+t2:uint
+t3:uint
+weaponBaseExp: uint
+skillAffix: int[]
+awakenMaterial: uint
+weaponProp: WeaponProperty[]
+awakenTexture: string
+awakenLightMapTexture: string
+awakenIcon: string
+unRotate: bool
+weaponPromoteId: uint
+storyId: uint
+awakenCosts: uint[]
+gachaCardNameHash: uint
+enhanceRule: uint
+destroyRule: MaterialDestroyType
+destroyReturnMaterial: uint[]
+destroyReturnMaterialCount: uint[]
+initialLockState: uint
+id: uint
+nameTextMapHash: uint
+descTextMapHash: uint
+icon: string
+itemType: ItemType
+weight: uint
+rank: uint
+gadgetId: uint
+dropable: bool
+useLevel: int
+globalItemLimit: int
