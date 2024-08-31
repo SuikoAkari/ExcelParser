@@ -1,0 +1,13 @@
+﻿type: Class
+talentId: uint
+nameTextMapHash: uint
+descTextMapHash: uint
+icon: string
+prevTalent: uint
+mainCostItemId: uint
+mainCostItemCount: uint
+viceCostItemId: uint
+viceCostItemCount: uint
+openConfig: string
+addProps: PropValConfig[]
+paramList: float[]

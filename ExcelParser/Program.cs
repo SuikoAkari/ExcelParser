@@ -8,5 +8,5 @@ Parser parser = new Parser();
 string[] files = Directory.GetFiles("Data");
 foreach(string file in files)
 {
-parser.Parse(file);
+/*if(file.Contains("AvatarTalentExcel"))*/parser.Parse(file);
 }

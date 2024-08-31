@@ -78,13 +78,13 @@ namespace ExcelParser
 
                   
                     string val = ParseType(keyValuePair.Value.Trim(), reader);
-                    Console.WriteLine("Adding " + keyValuePair.Key+": "+val);
+                   // Console.WriteLine("Adding " + keyValuePair.Key+": "+val);
                     if (val != null)
                     strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
                 else
                 {
-                     Console.WriteLine("Skip "+keyValuePair.Key);
+                   //  Console.WriteLine("Skip "+keyValuePair.Key);
                 }
 
 
