@@ -179,7 +179,10 @@ namespace ExcelParser
            
 
                 string ExcelName = fileName.Replace("Data", "");
-
+                if (ExcelName.Contains("ConfigTalent_"))
+                {
+                    ExcelName = "ConfigTalent";
+                }
                 int arraySize = (int)deReader.ReadVarInt();
 
                 // Console.WriteLine("arraySize " + arraySize);

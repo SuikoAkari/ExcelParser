@@ -1,0 +1,21 @@
+﻿type: Class
+ proudSkillId: uint
+    proudSkillGroupId: uint
+    level: uint
+    proudSkillType: uint
+    nameTextMapHash: uint
+    descTextMapHash: uint
+    unlockDescTextMapHash: uint
+    icon: string
+    coinCost: uint
+    costItems: IdCountConfig[]
+    filterConds: TalentFilterCond[]
+    breakLevel: uint
+    paramDescList: uint[]
+    lifeEffectType: ProudLifeEffectType
+    lifeEffectParams: string[]
+    effectiveForTeam: byte
+    isHideLifeProudSkill: bool
+    openConfig: string
+    addProps: PropValConfig[]
+    paramList: float[]

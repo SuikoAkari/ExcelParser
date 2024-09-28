@@ -1,0 +1,9 @@
+﻿type: Class
+    avatarPromoteId: uint
+    promoteLevel: uint
+    promoteAudio: string
+    scoinCost: uint
+    costItems: IdCountConfig[]
+    unlockMaxLevel: uint
+    addProps: PropValConfig[]
+    requiredPlayerLevel: uint
