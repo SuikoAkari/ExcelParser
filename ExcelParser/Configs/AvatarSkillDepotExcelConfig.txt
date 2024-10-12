@@ -1,0 +1,16 @@
+﻿type: Class
+    id: uint
+    energySkill: uint
+    talentId: uint
+    skills: uint[]
+    subSkills: uint[]
+    attackModeSkill: uint
+    leaderTalent: uint
+    extraAbilities: string[]
+    talents: uint[]
+    talentStarName: string
+    a:uint
+    a2:uint
+    inherentProudSkillOpens: ProudSkillOpenConfig[]
+    skillDepotAbilityGroup: string
+    BMODAPNPODN: uint

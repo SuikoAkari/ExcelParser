@@ -1,0 +1,36 @@
+﻿type: Class
+type: EntityType
+    _HACK__1: __HACK_
+    jsonName: string
+    hasMove: bool
+    hasAudio: bool
+    isEquip: bool
+    isInteractive: bool
+    visionLevel: VisionLevelType
+    tags: string[]
+    clientScriptHash: uint
+    _HACK__11: __HACK_
+    itemJsonName: string
+    itemPrefabPathHash: uint
+    radarHintID: uint
+    inteeIconName: string
+    landSoundID: uint
+    mpPropID: uint
+    interactNameTextMapHash: uint
+    chainId: uint
+    _HACK__21: __HACK_
+    DGKABBHOGDE: bool
+    APDBHPNPMIG: uint
+    _HACK__61: uint
+    _HACK__71: bool
+    hasDynamicBarrier: bool
+    _HACK__81: __HACK_
+    _HACK__91: __HACK_
+    id: uint
+    nameTextMapHash: uint
+    prefabPathHash: uint
+    prefabPathRemoteHash: uint
+    controllerPathHash: uint
+    controllerPathRemoteHash: uint
+    campID: uint
+    lodPatternName: string

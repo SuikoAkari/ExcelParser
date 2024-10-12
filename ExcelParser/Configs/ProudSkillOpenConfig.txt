@@ -1,0 +1,3 @@
+﻿type: Class
+    proudSkillGroupId: uint
+    needAvatarPromoteLevel: uint

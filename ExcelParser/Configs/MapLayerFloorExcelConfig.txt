@@ -1,0 +1,7 @@
+﻿type: Class
+id: uint
+IJFMNNCFDFN: uint
+NPCEMBDNIMI: int
+CLHMONPHJLE: uint
+PAPMIPENLMJ: LayerFloorInfo
+DABIKEEBFHA: uint

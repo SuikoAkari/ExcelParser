@@ -1,5 +1,5 @@
 ﻿type: Class
-//Fixed required
+//Fixed?
     id: uint
     type: SceneType
     subtype: SceneSubType
@@ -16,11 +16,12 @@
     comment: string
     overrideVisionLevelType: uint
     safePoint: uint
-    mpType: SceneMpType
+        mpType: SceneMpType
     isAllowMapMarkPoint: bool
-    boundaryPointVec: uint[]
+    boundaryPointVec: float[]
     isDeleteMapMarkPoint: bool
     dungeonEntryPoint: uint[]
+    ignoreNavMesh_: bool
     imageSceneId: uint
     aaa: uint
     eee: uint

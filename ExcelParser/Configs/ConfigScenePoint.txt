@@ -1,0 +1,9 @@
+﻿type: Bin
+damageRatio: uint
+gadgetId: uint
+areaId: uint
+LFKPENNKCDO: uint
+pos: Vector
+rot: Vector
+tranPos: Vector
+tranRot: Vector

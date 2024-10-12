@@ -1,0 +1,5 @@
+type: Class
+x: float
+y: float
+z: float
+

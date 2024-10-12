@@ -1,0 +1,8 @@
+﻿type: Class
+id: uint
+_HACK_: _HACK__
+GCPANCBEDAH: uint[]
+OMEMJHLFHCJ: uint
+FOKLCJMLJBN: uint
+CMGOOPNJPDP: uint[]
+PKMCABFOIDL: bool

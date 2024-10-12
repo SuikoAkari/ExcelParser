@@ -4,6 +4,7 @@ using Pastel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,36 +57,67 @@ namespace ExcelParser
             }
         }
     }
+    public class BinOutBitMask : BitMask
+    {
+      
+
+        public BinOutBitMask(DeReader reader, bool small)
+        {
+            // Call the base class constructor (if any)
+            // base();
+
+            _mask = (ulong)(small ? new BigInteger(reader.ReadU8()) : reader.ReadVarUInt());
+            _len = ((uint)new BigInteger(8));
+        }
+    }
     public class Parser
     {
-        public string ParseClass(DeReader reader, ExcelConfig excel)
+        public string ParseClass(DeReader reader, ExcelConfig excel, bool needToBeBin = false)
         {
           //  uint classId = (uint)reader.ReadVarUInt();
 
-            return ParseClassInt(reader, excel);
+            return ParseClassInt(reader, excel, needToBeBin);
         }
-        public string ParseClassInt(DeReader reader, ExcelConfig excel)
+        public string ParseClassInt(DeReader reader, ExcelConfig excel, bool needToBeBin=false)
         {
             List<string> strings = new List<string>();
-
-            ExcelBitMask mask = new ExcelBitMask(reader);
-
+            bool isBin = excel.type == "Bin";
+            if (needToBeBin) isBin = true;
+            BitMask mask = isBin ? new BinOutBitMask(reader, excel.Properties.Count <= 8) : new ExcelBitMask(reader);
+            int typeIndex = 0;
+            if(excel.TypeIndexes.Count > 0)
+            {
+                typeIndex = (int)reader.ReadVarUInt();
+                excel = excel.GetExcelFromTypeIndex(typeIndex);
+                strings.Add($"\"$type\": \"{excel.Name}\"");
+                Console.WriteLine("$type".PastelBg(ConsoleColor.Green) + ": \"" + excel.Name+"\"");
+              
+            }
             int j = 0;
             foreach (KeyValuePair<string, string> keyValuePair in excel.Properties)
             {
-                if (mask.TestBit(j))
+                try
+                {
+                    if (mask.TestBit(j))
+                    {
+
+
+                        string val = ParseType(keyValuePair.Value.Trim(), reader, isBin);
+                        // Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Green)+": "+val);
+                        if (val != null)
+                            strings.Add($"\"{keyValuePair.Key}\": {val}");
+                    }
+                    else
+                    {
+                        // Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Red));
+
+                    }
+                }
+                catch(Exception e)
                 {
 
-                  
-                    string val = ParseType(keyValuePair.Value.Trim(), reader);
-                   // Console.WriteLine("Adding " + keyValuePair.Key+": "+val);
-                    if (val != null)
-                    strings.Add($"\"{keyValuePair.Key}\": {(val.Length < 500 ? val : 0) }"); 
                 }
-                else
-                {
-                   //  Console.WriteLine("Skip "+keyValuePair.Key);
-                }
+                
 
 
                 j++;
@@ -94,10 +126,33 @@ namespace ExcelParser
             return "{"+ string.Join(",", strings.ToArray())+"}";
             
         }
-
-        private string ParseType(string Value, DeReader reader)
+        public string ParseDictionary(string fieldType, DeReader reader, string excelName)
         {
-            if (Value.EndsWith("[]"))
+            List<string> strings = new List<string>();
+
+            string field = ParseType(fieldType.Trim(), reader);
+            Console.WriteLine("Map key field: " + field);
+            return "\""+field+"\": " + ParseType(excelName,reader);
+        }
+        private string ParseType(string Value, DeReader reader, bool isBin=false)
+        {
+            if (Value.StartsWith("dictionary<"))
+            {
+                Value = Value.Replace("dictionary<", "").Replace(">", "");
+
+                string fieldType = Value.Split(",")[0];
+               
+                uint length = (uint)reader.ReadVarUInt();
+                Console.WriteLine("Dictionary Size: " + length);
+                List<string> strings = new List<string>();
+                ExcelConfig config = new ExcelConfig("Configs/" + Value.Split(",")[1] + ".txt");
+                for (int i = 0; i < length; i++)
+                {
+                    strings.Add(ParseDictionary(fieldType, reader, Value.Split(",")[1]));
+                }
+                return "{"+$"{string.Join(",", strings.ToArray())}"+"}";
+            }
+            else if (Value.EndsWith("[]"))
             {
                 string fieldType = Value.Substring(0, Value.Length - 2);
                 uint length = (uint)reader.ReadVarUInt();
@@ -149,10 +204,14 @@ namespace ExcelParser
                 if (!config.exist) return null;
                 if (config.type == "Class")
                 {
-                    return ParseClass(reader, config);
+                    return ParseClass(reader, config,isBin);
                 }else if(config.type == "Enum")
                 {
                     return ParseEnum(reader, config);
+                }
+                else if (config.type == "Bin")
+                {
+                    return ParseClass(reader, config, isBin);
                 }
                 else
                 {
@@ -182,22 +241,45 @@ namespace ExcelParser
                 if (ExcelName.Contains("ConfigTalent_"))
                 {
                     ExcelName = "ConfigTalent";
+                }else if (ExcelName.Contains("scene3"))
+                {
+                    ExcelName = "ScenePointList";
                 }
-                int arraySize = (int)deReader.ReadVarInt();
+                ExcelConfig config = new ExcelConfig("Configs/" + ExcelName + ".txt");
+                int arraySize = 0;
+                if (config.type != "Bin")
+                {
+                    arraySize = (int)deReader.ReadVarInt();
+                }
 
                 // Console.WriteLine("arraySize " + arraySize);
                 List<string> strings = new List<string>();
-                for (int i = 0; i < arraySize; i++)
+                string singleClassString = "";
+                if(arraySize > 0)
                 {
-                    Console.Write("\r{0}%".Pastel("#4287f5")+" completed   ", (float)i/arraySize*100);
-                    
-                    strings.Add(ParseClassInt(deReader, new ExcelConfig("Configs/" + ExcelName + ".txt")));
+                    for (int i = 0; i < arraySize; i++)
+                    {
+                        Console.Write("\r{0}%".Pastel("#4287f5") + " completed   ", (float)i / arraySize * 100);
+
+                        strings.Add(ParseClassInt(deReader, config));
+                    }
+                    Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": " + "SUCCESS".Pastel("#51f542") + " OUTPUT: " + $"Output/{fileName}.json".Pastel("#ffdf78"));
+                    // File.WriteAllText($"Output/{fileName}.json.noIdent", "[" + string.Join(",", strings.ToArray()) + "]");
+                    dynamic parsedJson = JsonConvert.DeserializeObject("[" + string.Join(",", strings.ToArray()) + "]");
+                    string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+                    File.WriteAllText($"Output/{fileName}.json", allText);
                 }
-                Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"SUCCESS".Pastel("#51f542")+" OUTPUT: "+ $"Output/{fileName}.json".Pastel("#ffdf78"));
-               // File.WriteAllText($"Output/{fileName}.json.noIdent", "[" + string.Join(",", strings.ToArray()) + "]");
-                dynamic parsedJson = JsonConvert.DeserializeObject("[" + string.Join(",", strings.ToArray()) + "]");
-                string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
-                File.WriteAllText($"Output/{fileName}.json", allText);
+                else
+                {
+                    singleClassString = ParseClassInt(deReader, config);
+                    Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": " + "SUCCESS".Pastel("#51f542") + " OUTPUT: " + $"Output/{fileName}.json".Pastel("#ffdf78"));
+                    // File.WriteAllText($"Output/{fileName}.json.noIdent", "[" + string.Join(",", strings.ToArray()) + "]");
+                    dynamic parsedJson = JsonConvert.DeserializeObject(singleClassString);
+                    string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+                    File.WriteAllText($"Output/{fileName}.json", allText);
+                }
+               
+               
               
                 
             }

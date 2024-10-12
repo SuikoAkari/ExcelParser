@@ -1,0 +1,15 @@
+﻿type: Bin
+damageRatio: uint
+gadgetId: uint
+areaId: uint
+LFKPENNKCDO: uint
+pos: Vector
+rot: Vector
+tranPos: Vector
+tranRot: Vector
+specialTipsIconPath: string
+mapVisibility: string
+cutsceneList: uint[]
+portalShape: string
+dungeonIds: uint[]
+dungeonQuestConditionList: HACK

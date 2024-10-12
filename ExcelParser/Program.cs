@@ -9,7 +9,7 @@ Parser parser = new Parser();
 string[] files = Directory.GetFiles("Data");
 foreach(string file in files)
 {
-/*if(file.Contains("AvatarTalentExcel"))*/parser.Parse(file);
+/*if(file.Contains("scene3"))*/parser.Parse(file);
 }
 
 /*string[] unknownFiles = Directory.GetFiles("D:\\Genshin5.1\\AssetMap\\Excels\\All\\MiHoYoBinData");
