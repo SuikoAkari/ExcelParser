@@ -5,7 +5,7 @@ t:uint
 t2:uint
 t3:uint
 weaponBaseExp: uint
-skillAffix: int[]
+skillAffix: uint[]
 awakenMaterial: uint
 weaponProp: WeaponProperty[]
 awakenTexture: string

@@ -1,0 +1,11 @@
+﻿type: Class
+activityId: uint
+activityType: ActivityTypeEnum
+nameTextMapHash: uint
+activitySceneTag: string
+isLoadTerrain: bool
+condGroupId: uint[]
+watcherId: uint[]
+HACK1:HACK
+activityCoinIdList: uint[]
+dungeonIdList: uint[]

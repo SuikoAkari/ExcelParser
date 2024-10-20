@@ -1,0 +1,8 @@
+﻿type: Class
+weaponPromoteId:uint
+    promoteLevel: uint
+    costItems: IdCountConfig[]
+    coinCost: uint
+    addProps: PropValConfig[]
+    unlockMaxLevel: uint
+    requiredPlayerLevel: uint

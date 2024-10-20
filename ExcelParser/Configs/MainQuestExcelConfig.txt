@@ -1,0 +1,32 @@
+type: Class
+id: uint
+resId: uint
+series: uint
+type: QuestType
+mainQuestTag: MainQuestTagType
+activeMode: PlayMode
+    titleTextMapHash: uint
+    descTextMapHash: uint
+    luaPath: string
+    recommendLevel: uint
+    repeatable: bool
+    suggestTrackMainQuestList: uint[]
+    suggestTrackOutOfOrder: bool
+    rewardIdList: uint[]
+    showType: QuestShowType
+    chapterId: uint
+    NAOFGBNMCCI: bool
+    BONJIMPOJLG: bool
+    taskID: uint
+    showRedPoint: bool
+    activityId: uint
+    isRelease: bool
+    specialShowRewardId: uint[]
+    specialShowCondIdList: uint[]
+    specialShowQuestId: uint
+    A: HACK
+    HGOMOKHCKND: uint[]
+    LNMELPHNIDD: bool
+    LJICLPBJCCB: ActionClass[]
+    unlockDescTextMapHash: uint
+    aaa:uint

@@ -1,0 +1,4 @@
+﻿type: Class
+id: uint
+offeringId: uint
+levelLimit: uint
