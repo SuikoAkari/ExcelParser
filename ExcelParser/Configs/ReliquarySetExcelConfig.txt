@@ -1,0 +1,10 @@
+﻿type: Class
+setId: uint
+setIcon: string
+rankLevel: uint
+setNeedNum uint[]
+equipAffixId: uint
+containsList: uint[]
+bagSortValue: uint
+dungeonGroup: uint[]
+textList: uint[]

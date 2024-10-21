@@ -74,6 +74,9 @@
     <None Update="Configs\ActionClass.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Configs\ReliquarySetExcelConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\ScenePointList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
