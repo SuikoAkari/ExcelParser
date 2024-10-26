@@ -1,0 +1,6 @@
+﻿type: Class
+id: uint
+nameTextMapHash: uint
+titleID: uint
+specialNameLabID: uint
+icon: string
