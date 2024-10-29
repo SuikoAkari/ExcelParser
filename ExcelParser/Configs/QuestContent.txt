@@ -1,0 +1,5 @@
+type: Class
+type: QuestContentType
+param: int[]
+param_str: string
+count: uint

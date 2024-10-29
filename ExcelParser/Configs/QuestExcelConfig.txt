@@ -1,0 +1,33 @@
+type: Class
+    subId: uint
+    mainId: uint
+    order: int
+    subIdSet: uint
+    isMpBlock: bool
+    descTextMapHash: uint
+    stepDescTextMapHash: uint
+    guideTipsTextMapHash: uint
+    textMaphashUnknown: uint
+    HACK_1:HACK
+    showType: QuestShowType
+    banType: BanGroupType
+    acceptCondComb: LogicType
+    acceptCond: QuestCond[]
+    finishCondComb: LogicType
+    finishCond: QuestContent[]
+    failCondComb: LogicType
+    failCond: QuestContent[]
+    guide: QuestGuide
+    showGuide: ShowQuestGuideType
+    finishParent: bool
+    failParent: bool
+    failParentShow: QuestShowType
+    isRewind: bool
+    finishExec: QuestExec[]
+    failExec: QuestExec[]
+    beginExec: QuestExec[]
+    exclusiveNpcList: uint[]
+    sharedNpcList: uint[]
+    exclusiveNpcPriority: uint
+    trialAvatarList: uint[]
+    exclusivePlaceList: uint[]
