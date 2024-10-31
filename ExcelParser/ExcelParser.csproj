@@ -32,6 +32,15 @@
     <None Update="Configs\LogicType.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Configs\RewardItem.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\WatcherTriggerConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\NewActivityWatcherConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\QuestCond.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -164,6 +173,9 @@
     <None Update="Configs\ProudSkillExcelConfig.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Configs\RewardExcelConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\WeaponPromoteExcelConfig.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -177,6 +189,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Configs\ProudLifeEffectType.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\WatcherTriggerType.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Configs\WeaponType.txt">
@@ -326,6 +341,9 @@
     <None Update="Data\NewActivityExcelConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\NewActivityWatcherConfigData">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\OfferingVersionExcelConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -339,6 +357,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\ReliquaryExcelConfigData">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\RewardExcelConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\scene3_point">

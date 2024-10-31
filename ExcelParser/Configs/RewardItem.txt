@@ -1,0 +1,9 @@
+﻿type: Class
+itemId: uint
+    hcoin: uint
+    scoin: uint
+    playerExp: uint
+    avatarExp: uint
+    fetterExp: uint
+    resin: uint
+itemCount: uint

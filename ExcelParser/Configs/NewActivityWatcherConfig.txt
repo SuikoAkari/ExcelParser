@@ -1,0 +1,12 @@
+﻿type: Class
+rewardID: uint
+JEIECGAPDNL: uint[]
+rewardPreview: uint
+KGNDLIDNCJE: uint[]
+activitychallengetipsTextMapHash: uint
+extraActivitychallengetipsTextMapHash: uint
+isAutoGrant: bool
+id: uint
+triggerConfig: WatcherTriggerConfig
+progress: uint
+isDisuse: bool

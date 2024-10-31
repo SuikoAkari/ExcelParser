@@ -1,0 +1,3 @@
+﻿type: Class
+    triggerType: WatcherTriggerType
+    paramList: string[]
