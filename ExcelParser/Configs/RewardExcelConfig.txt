@@ -1,3 +1,9 @@
 ﻿type: Class
 rewardId: uint
+    hcoin: uint
+    scoin: uint
+    playerExp: uint
+    avatarExp: uint
+    fetterExp: uint
+    resin: uint
 rewardItemList: RewardItem[]

@@ -1,0 +1,9 @@
+﻿type: Class
+LCBLBNMKCBF: uint
+avatarId: uint
+itemId: uint
+JIJOOFPEMOB: string
+GMBBOJNOLCI: string[]
+nameTextMapHash: uint
+descTextMapHash: uint
+LECGBODLCJK: bool
