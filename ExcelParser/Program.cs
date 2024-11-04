@@ -10,7 +10,7 @@ Parser parser = new Parser();
 string[] files = Directory.GetFiles("Data");
 foreach(string file in files)
 {
-if(file.Contains("AvatarTrace"))parser.Parse(file);
+/*if(file.Contains("WeaponPromote"))*parser.Parse(file);
 }
 
 

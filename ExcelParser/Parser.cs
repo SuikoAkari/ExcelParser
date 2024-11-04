@@ -103,13 +103,13 @@ namespace ExcelParser
 
 
                         string val = ParseType(keyValuePair.Value.Trim(), reader, isBin);
-                         Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Green)+": "+val);
+                         //Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Green)+": "+val);
                         if (val != null)
                             strings.Add($"\"{keyValuePair.Key}\": {val}");
                     }
                     else
                     {
-                         Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Red));
+                      //   Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Red));
 
                     }
                 }
