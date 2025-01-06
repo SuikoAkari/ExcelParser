@@ -39,5 +39,5 @@ weight: uint
 rank: uint
 gadgetId: uint
 dropable: bool
-useLevel: int
-globalItemLimit: int
+useLevel: uint
+globalItemLimit: uint

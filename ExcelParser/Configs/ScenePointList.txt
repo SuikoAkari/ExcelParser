@@ -1,4 +1,5 @@
 ﻿type: Bin
 transRadius: float
+a:int
 points: dictionary<string,ConfigScenePoint>
 EHGFBHPADEH: uint

@@ -13,4 +13,5 @@
     a2:uint
     inherentProudSkillOpens: ProudSkillOpenConfig[]
     skillDepotAbilityGroup: string
-    BMODAPNPODN: uint
+    BMODAPNPODN: ABEMDDNHKFC
+    //RoleCombatCardType isn't the real name

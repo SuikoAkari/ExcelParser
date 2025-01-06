@@ -68,7 +68,7 @@ namespace ExcelParser
                     {
 
                     }
-                    if (type == "Class" || type=="Bin")
+                    if (type == "Class" || type=="Bin" || type == "DicBin")
                     {
                         Properties.Add(keyValue[0].Trim(),val);
                     }

@@ -1,0 +1,6 @@
+﻿type: Bin
+abilityGroupSourceType: AbilityGroupSourceType
+abilityGroupTargetType: AbilityGroupTargetType
+abilityGroupTargetIDList: uint[]
+targetAbilities: AbilityTarget[]
+targetTalents: ConfigDynamicTalent[]

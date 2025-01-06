@@ -8,6 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Configs\FetterInfoExcelConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\FettersExcelConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\TestExcel.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\ConfigDynamicTalent.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\AbilityGroupTargetType.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\AbilityGroupSourceType.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\AbilityTarget.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\AvatarPromoteExcelConfig.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -35,7 +56,22 @@
     <None Update="Configs\LogicType.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Configs\MusicGameDiff.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\MusicGameBasicConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\TagCond.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\SceneTagConfig.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\RewardItem.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\FetterCond.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Configs\WatcherTriggerConfig.txt">
@@ -197,6 +233,12 @@
     <None Update="Configs\WatcherTriggerType.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Configs\AbilityGroup.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\AbilityGroupContent.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\WeaponType.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -275,6 +317,9 @@
     <None Update="Configs\MonsterExcelConfig.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\AbilityGroup_Other_PlayerElementAbility">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AvatarCodexExcelConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -344,6 +389,9 @@
     <None Update="Data\MonsterExcelConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\MusicGameBasicConfigData">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\NewActivityExcelConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -372,6 +420,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\SceneExcelConfigData">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\SceneTagConfigData">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\TalkExcelConfigData">

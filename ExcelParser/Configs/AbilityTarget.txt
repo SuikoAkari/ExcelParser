@@ -1,0 +1,4 @@
+﻿type: Bin
+abilityID: string
+abilityName: string
+abilityOverride: string

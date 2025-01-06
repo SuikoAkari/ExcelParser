@@ -85,13 +85,14 @@ namespace ExcelParser
             if (needToBeBin) isBin = true;
             BitMask mask = isBin ? new BinOutBitMask(reader, excel.Properties.Count <= 8) : new ExcelBitMask(reader);
             int typeIndex = 0;
+
             if(excel.TypeIndexes.Count > 0)
             {
                 typeIndex = (int)reader.ReadVarUInt();
                 excel = excel.GetExcelFromTypeIndex(typeIndex);
                 strings.Add($"\"$type\": \"{excel.Name}\"");
-                Console.WriteLine("$type".PastelBg(ConsoleColor.Green) + ": \"" + excel.Name+"\"");
-              
+                // Console.WriteLine("$type".PastelBg(ConsoleColor.Green) + ": \"" + excel.Name+"\"");
+
             }
             int j = 0;
             foreach (KeyValuePair<string, string> keyValuePair in excel.Properties)
@@ -103,21 +104,21 @@ namespace ExcelParser
 
 
                         string val = ParseType(keyValuePair.Value.Trim(), reader, isBin);
-                         //Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Green)+": "+val);
+                        //  Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Green)+": "+val);
                         if (val != null)
                             strings.Add($"\"{keyValuePair.Key}\": {val}");
                     }
                     else
                     {
-                      //   Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Red));
+                        //Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Red));
 
                     }
                 }
                 catch(Exception e)
                 {
-
+                    //Console.WriteLine(keyValuePair.Key.PastelBg(ConsoleColor.Red));
                 }
-                
+
 
 
                 j++;
@@ -131,8 +132,8 @@ namespace ExcelParser
             List<string> strings = new List<string>();
 
             string field = ParseType(fieldType.Trim(), reader);
-            Console.WriteLine("Map key field: " + field);
-            return "\""+field+"\": " + ParseType(excelName,reader);
+            // Console.WriteLine("Map key field: " + field);
+            return $"{field}: " + ParseType(excelName,reader);
         }
         private string ParseType(string Value, DeReader reader, bool isBin=false)
         {
@@ -232,6 +233,7 @@ namespace ExcelParser
         public void Parse(string input) {
             string fileName = Path.GetFileName(input);
             Console.WriteLine("Parsing " + fileName.Pastel("#4287f5"));
+            List<string> strings = new List<string>();
             try
             {
                 DeReader deReader = new DeReader(input);
@@ -244,16 +246,31 @@ namespace ExcelParser
                 }else if (ExcelName.Contains("scene3"))
                 {
                     ExcelName = "ScenePointList";
+                }else if (ExcelName.Contains("AbilityGroup_Other_PlayerElementAbility"))
+                {
+                    ExcelName = "AbilityGroup";
                 }
                 ExcelConfig config = new ExcelConfig("Configs/" + ExcelName + ".txt");
                 int arraySize = 0;
-                if (config.type != "Bin")
+                if (config.type == "DicBin")
+                {
+                  
+                    Console.WriteLine("DicSize " + arraySize);
+                    string dic = ParseType(config.Properties["start"], deReader, true);
+                    // Console.WriteLine(dic);
+                    dynamic parsedJson = JsonConvert.DeserializeObject(dic);
+                    string allText = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+                    
+                    File.WriteAllText($"Output/{fileName}.json", allText);
+                    return;
+                }
+                else if (config.type != "Bin")
                 {
                     arraySize = (int)deReader.ReadVarInt();
-                }
 
-                // Console.WriteLine("arraySize " + arraySize);
-                List<string> strings = new List<string>();
+                }
+                //  Console.WriteLine("arraySize " + arraySize);
+                
                 string singleClassString = "";
                 if(arraySize > 0)
                 {
@@ -285,7 +302,7 @@ namespace ExcelParser
             }
             catch(Exception e)
             {
-                
+                //File.WriteAllLines($"Output/{fileName}.json", strings);
                 Console.WriteLine("\rParsing of " + fileName.Pastel("#4287f5") + ": "+"ERROR OCCURRED".Pastel("#f54242"));
                 Console.WriteLine("Error: "+e.Message.Pastel("#f54242"));
             }

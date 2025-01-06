@@ -1,0 +1,27 @@
+type: Class
+id: uint
+musicID: uint
+musicLevel: uint
+jsonPath: string
+idk1: uint
+idk2: uint
+idk3: uint
+idk4: uint
+idk5: uint
+scaleTime: uint
+lateDropTime: uint
+idk6: uint
+scoreLevelList: uint[]
+scoreOneKey: uint
+scoreGreat: uint
+scoreLongPress: uint
+bpm: uint
+bpmDict: dictionary<uint,uint>
+ugcBeatDivisionOptions: uint[]
+ugcDefaultBeatDivision: 4
+simpleHintJsonPath: string
+complexHintJsonPath: string
+noteCount: uint
+comboConfig : ikd[]
+unlockTipsTextMapHash: uint
+soloConfig: idk[]

@@ -1,0 +1,9 @@
+﻿type: Class
+id: uint
+sceneTagName: string
+sceneId: uint
+isDefaultValid: bool
+isSkipLoading: bool
+isIndipendent: bool
+cond: TagCond[]
+idk: uint

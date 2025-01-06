@@ -1,0 +1,14 @@
+type: Class
+type: uint
+a: uint
+hideCostumeList: uint[]
+showCostumeList: uint[]
+tips: uint[]
+voiceTitleTextMapHash: uint
+voiceFile: string
+voiceFileTextTextMapHash: uint
+voiceTitleLockedTextMapHash: uint
+fetterId: uint
+avatarId: uint
+openConds: FetterCond[]
+finishConds: FetterCond[]

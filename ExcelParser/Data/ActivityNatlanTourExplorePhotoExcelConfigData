@@ -1,0 +1,30 @@
+ZeStandbyTurnLeft	TurnRightTurn01_90LBSTurn01_90LASTurn01_90RBSTurn01_90RASPositiveUpsetBS	UpsetLoopUpsetASæ§¤¶
+fRunWalkForwardWalkBack¶«˜™g	Rest_IdleRest_ASRest_BS	Rest_LoopProne®ÄÊ„
+hPlayGameHappy
+NegativeBSNegativeLoop
+NegativeASÆˆµ¹iDigForward_BSDigForward_BS02DigForward_LoopDigForward_ASDigForward_AS02	Search_BSSearch_BS02Search_LoopSearch_SuccessSearch_Success02	Search_ASÆêú“jTaunt¾‰Ò²kTease_BS
+Tease_LoopTease_ASTease–³†¡l
+Aware01_BS
+Aware01_AS
+Aware02_BSAware02Aware03TauntAware01_BSTauntAware01_LoopTauntAware01_TauntTauntAware01_ASTauntAware02_BSTauntAware02TauntAware02_ASTauntAware03_BSTauntAware03TauntAware03_ASTauntAware04TauntAware04_ASTauntAware05TauntAware06_BSTauntAware06TauntAware07_BSTauntAware07TauntAware07_AS
+AwareTauntAwareFree02_BSAwareFree02	ConfuseBSConfuseLoop	ConfuseASÆÃ°§mAlertMeleeAttack01Dig_BSDig_Loop
+Dig_AttackDig_Attack01®Ê‡@ÉStandbyæ„ê§ÊPersonality1_BSPersonality1_LoopPersonality1_WatchRightPersonality1_WatchLeftPersonality1_AS–Ä×ËPersonality2¾»ä(ÌWalk·³ª­StandbyStandbyFreeStandbyAware_ASOnlyFind_ASidleÖç„®
+TurnLTurnR	TurnLFree	TurnRFreeRunWalkFree
+TurnLAware
+TurnRAware
+Turn01_90L
+Turn01_90RÎùË
+¯OnlyFindTaste_BSÆ¦ÑÏ	°SitLieDownë’å±
+SpecialSitSpecialSit_BSSpecialSit_LoopSpecialSit_ASöøøú²HookMove_BSHookMove_ProcHookMove_ASî©ÂA³	TasteTaste2	OnlyTasteOnlyTaste_FailTaste1BS
+TasteProc1Taste2BS
+TasteProc2	TasteLoopÖùı‡´StandbyAwareAwareAware_BSStandbyAware_BSStandbyAware1StandbyAware1_ASSpecialStandbyAwareJumpAwareL1JumpAwareL2JumpAwareR1JumpAwareR2	JumpAwareStandbyAware_Loop…†¯µ
+AlertAttack01Attack02_BSAttack02Attack02_ASAttack02_AS02JumpBackJumpLeft	JumpRightStandbyBattleÖ¸Ø‘StandbyOnGroundWalkRunAware“³˜	’SitGrab_BSGrab_ASØ¸“LieLie_BirdñÉğ”Grab¶´Ò¯•Scratch¶ü‰–StandbyInWaterü­³—StandInWaterSwimDiveÂë•õStandbyTauntAwareMove_ASAwareEndæßŞöRunWalkForwardWalkBackWalkLeft	WalkRightTurnLeft	TurnRightTauntAware04TauntAware05TauntAware06TauntAware07
+Turn01_90L
+Turn01_90R¶´©…÷Standby_Water	Run_Water
+Walk_WaterTurnMinor_WaterTurnLeft_WaterTurnRight_WaterDiveTurn90LDiveTurn90R²Ç_øLandRest01_IdleLandRest02_IdleRest_Loop1_ToLoop2Rest_Loop2_ToLoop1Rest_ASRest_BSRest_Loop1ToLoop2Rest_Loop2ToLoop1†Õæ‡ùTeaseö‚š¦	ú		AwareHighAwareLowTauntAware_BSTauntAware_LoopTauntAware_ASTauntAware02_BSTauntAware02_LoopTauntAware02_ASTauntAware03¶À¹†ûTease_WaterÎã÷šü
+Play_Water	PlayWaterî›NıWaterRest_IdleRest_Water_BSRest_Water_ASRest_Water_LoopBornÆƒ­êşAlertAlert_WaterShootAttackShootAttack_Water–™»ÊÙStandbyLandInflated_AS02Personality1
+SitToStand–ÒÉ”Ú
+GroundToWaterWaterToGroundRunRun02Run02_ToStandbyWalkWalk_GroundToWaterWalk_WaterToGroundRun_GroundToWaterRun_WaterToGround†íÃƒ
+ÛStandby_WaterInflated_Water_AS02Personality2_Water	Run_Water
+Walk_Wateræ…àÜPersonality2_BSPersonality2_LoopPersonality2Personality2_ASStandbyLand_Sit
+StandToSitöÂˆ¡İPersonality1_Water_BSPersonality1_Water_LoopPersonality1_Water_ASŞ¤Ò‹ŞStandbyLand_InflatedStandby_Water_InflatedInflated_ASInflated_Water_ASAlertAlert_WaterHitShakeHit_LHit_HHit_Rolling_LoopHit_Rolling_Loop02Hit_Rolling_ASHit_Rolling_Loop_WaterHit_Rolling_Loop_Water02Hit_Rolling_AS_WaterHitThrowHitThrowDropHitThrowToGroundHitThrowToGround_WaterStruggleşğ‰Ş

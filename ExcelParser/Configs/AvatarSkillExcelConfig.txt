@@ -22,6 +22,7 @@
     buffIcon: string
     proudSkillGroupId: uint
     globalValueKey: string
+    MHNFKLCEHBO: bool
     energyMin: float
     forceCanDoSkill: bool
     cdSlot: uint
@@ -29,3 +30,6 @@
     shareCDID: uint
     EADJMGGKCHK: bool
     FJJIMFPPKCB: bool
+    GBCHEFKPKKG: uint
+    AJOIGPJIICC: float
+    LKIPHPLNGKP: float

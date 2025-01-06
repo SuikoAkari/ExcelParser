@@ -1,0 +1,5 @@
+﻿type: enum
+None: 0
+Ousia: 1
+Pneuma: 2
+Furina: 3

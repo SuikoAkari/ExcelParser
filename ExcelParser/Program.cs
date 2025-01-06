@@ -10,7 +10,8 @@ Parser parser = new Parser();
 string[] files = Directory.GetFiles("Data");
 foreach(string file in files)
 {
-/*if(file.Contains("WeaponPromote"))*parser.Parse(file);
+    string fileName = Path.GetFileName(file);
+    /*if (fileName == "FettersExcelConfigData") */parser.Parse(file);
 }
 
 
